@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoLogoFacebook } from "react-icons/io5";
 
 export default function Footer() {
     const navLinks = [
@@ -9,35 +11,61 @@ export default function Footer() {
         { href: "/contact", label: "CONTACT" },
         { href: "/blog", label: "BLOG" },
     ]
+    const rightNavLinks = [
+        { href: "/baseball", label: "Baseball cap" },
+        { href: "/bulk", label: "Bulk cap" },
+        { href: "/custom", label: "Custom cap" },
+    
+    ]
     return (
-        <footer className="bg-white dark:bg-gray-900">
-            <div className="container px-6 py-12 mx-auto">
-                <div className="flex flex-col-reverse items-center text-center">
-                    <Link className='text-4xl  tracking-wider text-center' href={'/'}>
-                        HAGENTEX
-                    </Link>
-
-                    <div className="flex flex-wrap justify-center mb-6 -mx-4">
+        <footer className="bg-black text-white dark:bg-gray-900 px-16 py-16 lg:py-24">
+           <div className='grid md:grid-cols-3 gap-y-6 lg:grid-cols-4'>
+           
+                <div>
+                    <h1 className=' text-xs font-bold mb-6'>Assistant</h1>
+                    <ul className='space-y-3 '>
                         {
-                            navLinks.map((link, index) => (
-                                <Link key={link.href} href={link.href} className=" text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
-                                    {link.label}  {
-                                        index !== navLinks.length - 1 && (<span className="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">|</span>)
-                                    }
+                            navLinks.map(el => <li key={el.href} className=' relative w-full'>
+                                <Link className='text-sm hover:underline ' href={el.href}>{el.label}
+                                  <span className="absolute bottom-0 left-0 block w-0 h-1 bg-blue-500 transition-all duration-300 ease-out hover:w-full"></span>
+      
                                 </Link>
-                            ))
+                            </li>)
                         }
+                    </ul>
+                </div>
+                <div>
+                    <h1 className=' text-xs font-bold mb-6'>Product Information</h1>
+                    <ul className='space-y-3 '>
+                        {
+                            rightNavLinks.map(el => <li key={el.href} className=' relative w-full'>
+                                <Link className='text-sm hover:underline ' href={el.href}>{el.label}
+                                  <span className="absolute bottom-0 left-0 block w-0 h-1 bg-blue-500 transition-all duration-300 ease-out hover:w-full"></span>
+      
+                                </Link>
+                            </li>)
+                        }
+                    </ul>
+                </div>
+       
+    
+
+            <div className=' flex flex-col items-end col-span-1 lg:col-span-2'>
+     <div className=' min-w-sm mx-auto'>
+            <h1 className=' text-xs font-bold  mb-6'>Keep in Touch</h1>
+                    <form action="" className='mb-5 relative'>
+                        <input type="email" placeholder='Enter valid email' className='w-full border-1 
+                        border-transparent border-b-white hover:border-white
+                        border-b-1  p-2 text-sm' />
+                        <button className='absolute z-20 top-1/2 -translate-y-1/2 right-2'> <IoIosArrowRoundForward className='' size={34}/></button>
+                    </form>
+                    <div className='flex gap-5 items-center'>
+                        <IoLogoFacebook size={32}  className='cursor-pointer rounded-full transition-colors duration-500 hover:bg-white hover:text-black' />
+                        <IoLogoFacebook size={32} className='cursor-pointer rounded-full transition-colors duration-500 hover:bg-white hover:text-black'/>
                     </div>
-
-                </div>
-
-
-                <div className="flex justify-center">
-                    <p className="text-sm text-gray-500 dark:text-gray-300">© Copyright 2021. All Rights Reserved.</p>
-
-
-                </div>
             </div>
+     </div>
+           </div>
         </footer>
     )
 }
