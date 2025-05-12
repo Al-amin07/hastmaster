@@ -3,7 +3,8 @@ import * as React from "react"
 import "./testimonial.css"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import Image from "next/image"
+import { CgProfile } from "react-icons/cg";
+
 const reviews = [
   {
     rating: 5,
@@ -41,6 +42,8 @@ const reviews = [
     website: "https://lenacodes.io"
   }
 ];
+import { MdOutlineStar } from "react-icons/md";
+
 
 export default function Testimonial() {
 
@@ -88,14 +91,15 @@ export default function Testimonial() {
   return (
     <div>
       <h1 className=" text-5xl font-medium text-center mb-8">Real Reviews from Real Clients</h1>
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className="keen-slider py-12 container mx-auto ">
         {
           reviews?.map((review) => (
-            <div key={review.name} className="keen-slider__slide bg-white shadow-lg rounded-lg p-8 text-center w-full mx-auto">
+            <div key={review.name} className="keen-slider__slide cursor-pointer bg-white shadow-xl rounded-lg p-8 text-center w-full mx-auto">
               {/* Rating Stars */}
-              <div className="text-black mb-4 text-xl">{
+              <div className="text-black flex gap-2 items-center justify-center mb-4 text-xl">{
                 [...Array(review.rating)].map((_, i) => (
-                  <span key={i}>⭐</span>
+                  <span key={i}><MdOutlineStar size={28} className=" text-black" /></span>
+                  // <span key={i}>⭐</span>
                 ))
               }</div>
 
@@ -108,13 +112,14 @@ export default function Testimonial() {
 
               {/* Image */}
               <div className="flex justify-center mb-2">
-                <Image
-                  src="/lowell.jpg" // replace with actual image path
+                {/* <Image
+                  src={p1} // replace with actual image path
                   alt="Lowell Neset"
-                  width={64}
-                  height={64}
-                  className="rounded-full"
-                />
+                  width={54}
+                  height={24}
+                  className="rounded-full border-2"
+                /> */}
+                <CgProfile  size={50}/>
               </div>
 
               {/* Name */}

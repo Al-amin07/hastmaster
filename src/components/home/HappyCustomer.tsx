@@ -41,8 +41,8 @@ export default function TestimonialsPage() {
     },
   ]
   return (
-    <div className='bg-red-400 flex justify-center py-24'>
-      <div className="bg-white space-y-24 rounded-xl max-w-5xl py-16 px-4 md:px-10 text-center">
+    <div className=' flex justify-center py-24'>
+      <div className="bg-white shadow-2xl space-y-24 rounded-xl max-w-5xl py-16 px-4 md:px-10 text-center">
         {/* Happy Customers */}
         <section className=" text-black/80">
           <h2 className="text-3xl md:text-4xl font-semibold">Happy Customer</h2>
