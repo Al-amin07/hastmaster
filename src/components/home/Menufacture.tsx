@@ -8,7 +8,7 @@ export default function Manufacture() {
   return (
     <div 
 
-    className="relative w-full h-screen overflow-hidden">
+    className="relative w-full  h-screen overflow-hidden">
       <Image src={img} alt='aadha'   height={600}
         width={1200}
         className="absolute inset-0 w-full h-full object-cover"/>
@@ -16,10 +16,11 @@ export default function Manufacture() {
 
       {/* Content Box */}
       <motion.div 
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ y: 100, opacity: 0}}
   whileInView={{opacity: 1, y: 0}}
-  transition={{  duration: 0.6, delay: 0.3 }}
-      className={`absolute top-1/2 right-8 transform -translate-y-1/2 bg-white bg-opacity-95 max-w-md p-6 md:p-8 m-4 shadow-lg  text-gray-800 `}>
+  transition={{  duration: 0.5, delay: 0.1 }}
+      className={`absolute top-1/2 right-8 
+       transform -translate-y-1/2 bg-white bg-opacity-95 max-w-md p-6 md:p-8  shadow-lg  text-gray-800 `}>
         <h5 className="uppercase font-futura  text-lg tracking-wide text-gray-500 ">
           Premier Hat and Cap Manufacturing Partner
         </h5>

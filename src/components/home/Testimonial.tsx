@@ -1,8 +1,17 @@
 'use client'
 import * as React from "react"
-import "./testimonial.css"
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import {
+  
+  Navigation,
+  
+  Autoplay,
+  
+} from "swiper/modules";
 import { CgProfile } from "react-icons/cg";
 
 const reviews = [
@@ -44,94 +53,88 @@ const reviews = [
 ];
 import { MdOutlineStar } from "react-icons/md";
 
-
+import "./testimonial.css"
 export default function Testimonial() {
+const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const [sliderRef] = useKeenSlider<HTMLDivElement>(
 
-    {
-      loop: true,
-      slides: {
-        perView: 3,
-        spacing: 20
-      }
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>
-        let mouseOver = false
-        function clearNextTimeout() {
-          clearTimeout(timeout)
-        }
-        function nextTimeout() {
-          clearTimeout(timeout)
-          if (mouseOver) return
-          timeout = setTimeout(() => {
-            slider.next()
-          }, 2000)
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true
-            clearNextTimeout()
-          })
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false
-            nextTimeout()
-          })
-          nextTimeout()
-        })
-        slider.on("dragStarted", clearNextTimeout)
-        slider.on("animationEnded", nextTimeout)
-        slider.on("updated", nextTimeout)
-      },
-    ]
-  )
 
   return (
-    <div>
-      <h1 className=" text-5xl font-medium text-center mb-8">Real Reviews from Real Clients</h1>
-      <div ref={sliderRef} className="keen-slider py-12 container mx-auto ">
-        {
-          reviews?.map((review) => (
-            <div key={review.name} className="keen-slider__slide cursor-pointer bg-white shadow-xl rounded-lg p-8 text-center w-full mx-auto">
-              {/* Rating Stars */}
-              <div className="text-black flex gap-2 items-center justify-center mb-4 text-xl">{
-                [...Array(review.rating)].map((_, i) => (
-                  <span key={i}><MdOutlineStar size={28} className=" text-black" /></span>
-                  // <span key={i}>⭐</span>
-                ))
-              }</div>
+    <div className="min-h-[500px]  elative">
+      <h1 className=" text-5xl font-medium text-center  mb-12">Real Reviews from Real Clients</h1>
+        <Swiper
+        speed={1200}
+          slidesPerView={3}
+          spaceBetween={30}
+          pagination={{ clickable: true }}
+          loop={true}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          hashNavigation={{ watchState: true }}
+        
+           breakpoints={{
+            "@0.00": {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            "@1.25": {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            "@1.50": {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          
+          
+          }}
+            onSwiper={(swiper) => setActiveIndex(swiper.realIndex)}
+  onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          modules={[Navigation, Autoplay]}
+          className="mySwiper w-full min-h-[450px]"
+        >
+        {reviews.map((review, index) => {
+  const middleIndex = (activeIndex + 1) % reviews.length;
+  const isMiddle = index === middleIndex;
 
-              {/* Text */}
-              <p className="text-gray-800 text-lg leading-relaxed mb-6">
-                {
-                  review.text
-                }
-              </p>
-
-              {/* Image */}
-              <div className="flex justify-center mb-2">
-                {/* <Image
-                  src={p1} // replace with actual image path
-                  alt="Lowell Neset"
-                  width={54}
-                  height={24}
-                  className="rounded-full border-2"
-                /> */}
-                <CgProfile  size={50}/>
-              </div>
-
-              {/* Name */}
-              <div className="font-semibold text-lg text-black">{review?.name}</div>
-
-              {/* Website */}
-              <div className="text-gray-600 text-sm">{review?.website}</div>
-            </div>
-          ))
-        }
-
+  return (
+    <SwiperSlide
+      key={review.name}
+      className={`cursor-pointer bg-white  rounded-lg p-8 text-center w-full mx-auto transition-all duration-700 ${
+        isMiddle ? ' scale-125 z-10 shadow-2xl' : 'scale-95 opacity-80'
+      }`}
+    >
+      {/* Rating Stars */}
+      <div className="text-black flex gap-2 items-center justify-center mb-4 text-xl">
+        {[...Array(review.rating)].map((_, i) => (
+          <span key={i}>
+            <MdOutlineStar size={28} className="text-black" />
+          </span>
+        ))}
       </div>
+
+      {/* Text */}
+      <p className="text-gray-800 text-lg leading-relaxed mb-6">
+        {review.text}
+      </p>
+
+      {/* Image */}
+      <div className="flex justify-center mb-2">
+        <CgProfile size={50} />
+      </div>
+
+      {/* Name */}
+      <div className="font-semibold text-lg text-black">{review.name}</div>
+
+      {/* Website */}
+      <div className="text-gray-600 text-sm">{review.website}</div>
+    </SwiperSlide>
+  );
+})}
+        </Swiper>
+     
     </div>
   )
 }

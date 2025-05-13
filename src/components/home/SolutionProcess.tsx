@@ -34,8 +34,8 @@ export default function SolutionProcess() {
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col cursor-pointer group items-center text-center space-y-4 relative">
             {/* Circle Number */}
-            <div className="w-28 h-28 relative group-hover:bg-red-500 group-hover:text-white transition-colors duration-500 rounded-full   flex items-center justify-center text-red-600 text-4xl font-bold">
-              <div className=" absolute animate-spin duration-[50000] h-full w-full  rounded-full border-[3px]  border-gray-400 border-dashed">
+            <div className="w-28 h-28 relative group-hover:bg-black group-hover:text-white transition-colors duration-700 rounded-full   flex items-center justify-center text-black text-4xl font-bold">
+              <div className=" absolute animate-spin duration-[12000ms]  h-full w-full  rounded-full border-[3px]  border-black border-dashed">
 
               </div>
               {step.number}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import {  Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -8,7 +8,6 @@ const poppins = Poppins({
   variable: '--font-poppins',
   display: 'swap',
 })
-
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
                 <div className="flex items-center justify-between">
                     <Link href="/">
-                        <h1 className='text-2xl font-semibold'>Hat Shop</h1>
+                        <h1 className='text-2xl uppercase font-semibold'>Hatsmaster</h1>
                     </Link>
 
                     {/* Mobile menu button */}
