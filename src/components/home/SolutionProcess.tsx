@@ -26,7 +26,7 @@ const steps = [
 export default function SolutionProcess() {
 
   return (
-    <div className="py-16 bg-white text-center">
+    <div className=" bg-white text-center">
       <div className="text-blue-500 uppercase text-sm font-semibold tracking-widest mb-2">Work Process</div>
       <h2 className="text-3xl font-bold mb-12">Our Solution Process</h2>
 
@@ -34,8 +34,8 @@ export default function SolutionProcess() {
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col cursor-pointer group items-center text-center space-y-4 relative">
             {/* Circle Number */}
-            <div className="w-28 h-28 relative group-hover:bg-black group-hover:text-white transition-colors duration-700 rounded-full   flex items-center justify-center text-black text-4xl font-bold">
-              <div className=" absolute animate-spin duration-[12000ms]  h-full w-full  rounded-full border-[3px]  border-black border-dashed">
+            <div className="w-28 h-28 relative group-hover:bg-black/80 group-hover:text-white transition-colors duration-700 rounded-full   flex items-center justify-center text-black text-4xl font-bold">
+              <div className=" absolute animate-spin  h-full w-full  rounded-full border-[3px]  border-black/80 border-dotted">
 
               </div>
               {step.number}

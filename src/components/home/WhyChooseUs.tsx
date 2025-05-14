@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
   return (
     <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/choose-us-bg.jpg')" }}>
       <div className="bg-black opacity-60 py-12">
-        <h2 className="text-center text-white text-3xl font-serif mb-10">WHY CHOOSE US</h2>
+        {/* <h2 className="text-center text-white text-3xl font-serif mb-10">WHY CHOOSE US</h2> */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-white">
           {features.map((feature, index) => (
             <div key={index} className="text-center space-y-2">

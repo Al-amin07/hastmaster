@@ -82,7 +82,7 @@ export default function ProductSection() {
       </div>
 
       {/* Swiper Carousel */}
-      <div className="flex-1">
+      <div className="flex-1 relative">
         <Swiper
         speed={1000}
           slidesPerView={2}
@@ -134,11 +134,11 @@ export default function ProductSection() {
         </Swiper>
 
         {/* Navigation Buttons */}
-        <div className="absolute lg:-top-16  lg:mt-0 z-10 lg:left-[95%] left-1/2 -translate-x-1/2 flex gap-3">
-          <button className="custom-prev cursor-pointer p-2 h-10 w-10 flex items-center justify-center bg-white rounded-full border border-black hover:text-white hover:bg-black transition-colors duration-300 font-bold shadow-xl">
+        <div className="absolute lg:-top-16  lg:mt-0 z-10 lg:-right-6 right-1/2 -translate-x-1/2 flex gap-3">
+          <button className="custom-prev cursor-pointer p-2 h-10 w-10 flex items-center justify-center bg-white rounded-full border border-black/45 hover:text-white hover:bg-black transition-colors duration-300 font-bold shadow-xl">
             <FaChevronLeft size={18} />
           </button>
-          <button className="custom-next cursor-pointer p-2 h-10 w-10 flex items-center justify-center bg-white rounded-full hover:text-white hover:bg-black transition-colors duration-300 font-bold shadow-xl">
+          <button className="custom-next cursor-pointer p-2 h-10 w-10 flex items-center justify-center bg-white rounded-full hover:text-white hover:bg-black transition-colors border border-black/45 duration-300 font-bold shadow-xl">
             <FaChevronRight size={18} />
           </button>
         </div>

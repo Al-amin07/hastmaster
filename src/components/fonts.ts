@@ -7,3 +7,4 @@ export const playDisplay = Playfair_Display({
   display: 'swap',
 })
 
+

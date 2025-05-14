@@ -23,7 +23,7 @@ import { GoDotFill } from 'react-icons/go';
 
 export default function Header() {
   return (
-    <div className='md:h-[600px] relative'>
+    <div className='md:h-screen relative'>
       <Swiper
         grabCursor={true}
         speed={1200}
@@ -34,7 +34,7 @@ export default function Header() {
         }}
         loop={true}
         autoplay={{
-          delay: 4000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         hashNavigation={{ watchState: true }}
@@ -44,24 +44,49 @@ export default function Header() {
         }}
 
         modules={[Navigation, HashNavigation, Autoplay, Scrollbar]}
-        className="mySwiper h-[400px] md:h-[550px]"
+        className="mySwiper h-[400px] md:h-[700px]"
       >
 
         <SwiperSlide>
 
-          <div className="w-full bg-center bg-cover min-h-[600px] bg-[url('@/assets/banner/banner2.jpg')]"
+          <div className="w-full bg-center bg-cover  min-h-screen bg-[url('@/assets/banner/b5.jpg')]"
 
           >
-            <div className="flex items-center min-h-[450px]  md:min-h-[600px] justify-between w-full bg-gray-900/20">
-              <div className="md:px-24 ">
-                <h1 className="text-3xl font-semibold  text-white md:w-[45%]  text-left lg:text-6xl">
+            <div className="flex items-center min-h-[450px]  md:min-h-[700px] justify-between w-full bg-gray-900/30">
+              <div className="md:px-24  w-full 
+              ">
+                <h1 className="text-2xl  font-semibold  text-white   text-right  lg:text-[40px]">
                   GLOBAL LEADERS
-                  <br /> IN <br />
-                  PRIVATE LABEL
-                  HEADWEAR SOURCING.
+                  IN 
+                  PRIVATE LABEL <br />
+                  HEADWEAR SOURCING
                 </h1>
 
-                <div className='flex justify-between items-center max-w-md ml-auto border p-4 rounded-md cursor-pointer hover:text-white hover:bg-black hover:border-black transition-colors duration-500'>
+                <div className='flex justify-center md:justify-between items-center  lg:max-w-md ml-auto mt-6 border-0 md:border p-4 rounded-md cursor-pointer text-white hover:bg-black  hover:border-black transition-colors duration-500'>
+                  <h1 className='text-sm md:text-xl uppercase font-medium'>Consalt </h1> <span><GoDotFill size={20} /></span>
+                  <h1 className='text-sm md:text-xl uppercase font-medium'>Design</h1> <span><GoDotFill size={20} /></span>
+                  <h1 className='text-sm md:text-xl uppercase font-medium'>Product</h1> <span><GoDotFill size={20} /></span>
+                  <h1 className='text-sm md:text-xl uppercase font-medium'>Deliver</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+          <div className="w-full bg-center bg-cover  min-h-screen bg-[url('@/assets/banner/banner5.jpg')]"
+
+          >
+            <div className="flex items-center min-h-[450px]  md:min-h-[700px] justify-between w-full bg-gray-900/30">
+              <div className="md:px-24  w-full 
+              ">
+                <h1 className="text-2xl uppercase font-semibold  text-white   text-right  lg:text-[40px]">
+               Headwear manufacturing specialist <br />
+                   buying agent for importers
+                </h1>
+
+                <div className='flex justify-between items-center max-w-md ml-auto mt-6 border p-4 rounded-md cursor-pointer text-white hover:bg-black hover:border-black transition-colors duration-500'>
                   <h1 className='text-xl uppercase font-medium'>Consalt </h1> <span><GoDotFill size={20} /></span>
                   <h1 className='text-xl uppercase font-medium'>Design</h1> <span><GoDotFill size={20} /></span>
                   <h1 className='text-xl uppercase font-medium'>Product</h1> <span><GoDotFill size={20} /></span>
@@ -74,18 +99,18 @@ export default function Header() {
         </SwiperSlide>
         <SwiperSlide>
 
-          <div className="w-full bg-center bg-cover min-h-[600px] bg-[url('@/assets/banner/banner5.jpg')]"
+          <div className="w-full bg-center bg-cover  min-h-screen bg-[url('@/assets/banner/b1.jpg')]"
 
           >
-            <div className="flex items-center min-h-[450px]  md:min-h-[600px] justify-between w-full  bg-gray-900/20">
-              <div className="md:px-16 ">
-                <h1 className="text-3xl uppercase font-semibold  text-white md:w-[75%]  text-left lg:text-6xl">
-                  Headwear Sourcing specialist
-                  <br />And <br />
-                  buying agent for importers
+            <div className="flex items-center min-h-[450px]  md:min-h-[700px] justify-between w-full bg-gray-900/30">
+              <div className="md:px-24  w-full 
+              ">
+                <h1 className="text-3xl uppercase font-semibold  text-white   text-right  lg:text-[40px]">
+                     We design, sample and manufacture <br />
+                  with verified factory partners
                 </h1>
 
-                <div className='flex justify-between items-center max-w-md ml-auto border p-4 rounded-md cursor-pointer hover:text-white hover:bg-black hover:border-black transition-colors duration-500'>
+                <div className='flex justify-between items-center max-w-md ml-auto mt-6 border p-4 rounded-md cursor-pointer text-white hover:bg-black hover:border-black transition-colors duration-500'>
                   <h1 className='text-xl uppercase font-medium'>Consalt </h1> <span><GoDotFill size={20} /></span>
                   <h1 className='text-xl uppercase font-medium'>Design</h1> <span><GoDotFill size={20} /></span>
                   <h1 className='text-xl uppercase font-medium'>Product</h1> <span><GoDotFill size={20} /></span>
@@ -96,38 +121,13 @@ export default function Header() {
           </div>
 
         </SwiperSlide>
-        <SwiperSlide>
-
-          <div className="w-full bg-center bg-cover min-h-[600px] bg-[url('@/assets/banner/banner1.jpg')]"
-
-          >
-            <div className="flex items-center min-h-[450px]  md:min-h-[600px] justify-between w-full bg-gray-900/20">
-              <div className="md:px-24 ">
-                <h1 className="text-3xl uppercase font-semibold  text-white md:w-[60%] 
-                 text-left lg:text-6xl">
-                  We design, sample and manufacture
-                  <br />with <br />
-                  our verified factory partners
-                </h1>
-
-                <div className='flex justify-between items-center max-w-md ml-auto border p-4 rounded-md cursor-pointer hover:text-white hover:bg-black hover:border-black transition-colors duration-500'>
-                  <h1 className='text-xl uppercase font-medium'>Consalt </h1> <span><GoDotFill size={20} /></span>
-                  <h1 className='text-xl uppercase font-medium'>Design</h1> <span><GoDotFill size={20} /></span>
-                  <h1 className='text-xl uppercase font-medium'>Product</h1> <span><GoDotFill size={20} /></span>
-                  <h1 className='text-xl uppercase font-medium'>Deliver</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </SwiperSlide>
-
+    
       </Swiper>
       <div className="h-16 flex  items-center  rounded-b-2xl  bg-[#3d3d3d] opacity-60 relative">
         {/* Swiper will inject the scrollbar drag element here */}
         <div className="custom-swiper-scrollbar w-[40%] h-1  rounded relative overflow-hidden"></div>
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2  flex items-center bottom-0 mt-4  gap-3">
+      <div className="absolute left-1/2 -translate-x-1/2  flex items-center -bottom-[102px] mt-4  gap-3">
         <button className="custom-prev cursor-pointer p-2 h-10 w-10 flex items-center justify-center bg-white rounded-full hover:text-white hover:bg-black transition-colors duration-300 font-bold shadow-xl">
           <FaChevronLeft size={18} />
         </button>
@@ -135,9 +135,7 @@ export default function Header() {
           <FaChevronRight size={18} />
         </button>
       </div>
-      {/* <div className="relative rounded-full w-[200px] p-8 text-center font-bold text-gray-700 dotted-border-moving">
-  Animated Border
-</div> */}
+      
 
 
 
