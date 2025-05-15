@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+
 import img from '@/assets/dhaka.jpg'
 import Image from 'next/image'
 import { motion } from "motion/react"

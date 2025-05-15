@@ -4,6 +4,10 @@ import img1 from '@/assets/cap/c1.jpg'
 import img2 from '@/assets/cap/c2.avif'
 import img3 from '@/assets/cap/c3.avif'
 import img4 from '@/assets/cap/c4.avif'
+// import img1 from '../../assets/cap/c1.jpg'
+// import img2 from '../../assets/cap/c2.avif'
+// import img3 from '../../assets/cap/c3.avif'
+// import img4 from '../../assets/cap/c4.avif'
 
 import Image from 'next/image'
 
